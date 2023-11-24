@@ -1,0 +1,29 @@
+#global_container{
+    background-color: rgb(255, 159, 159);
+}
+
+#navbar{
+    background-color: rgb(255, 159, 159);
+}
+#browser_container{
+    margin: 8px;
+    background-color: white;
+    border-radius: 12px;
+
+}
+#close_btn,#maximize_btn,#minimize_btn {  
+    background-image: none; 
+    border: none;
+    border-radius: 50%; 
+    margin: 4px; 
+    padding: 8px 
+} 
+#close_btn{
+    background-color: red;
+}
+#maximize_btn {
+    background-color: yellow;
+} 
+#minimize_btn {
+    background-color: rgb(4, 194, 4);
+}
