@@ -1,0 +1,3 @@
+/run/media/kittycat/Linux_files/cpp/Fusion_browser/CMakeFiles/fusion_browser.dir
+/run/media/kittycat/Linux_files/cpp/Fusion_browser/CMakeFiles/edit_cache.dir
+/run/media/kittycat/Linux_files/cpp/Fusion_browser/CMakeFiles/rebuild_cache.dir
