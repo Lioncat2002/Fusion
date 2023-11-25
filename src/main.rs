@@ -17,8 +17,8 @@ fn main() {
     let webview = WebView::with_context(&context);
     webview.load_uri("https://www.google.com/");
 
-    let browser_container = gtk::Box::new(gtk::Orientation::Horizontal, 0);
-    browser_container.pack_start(&webview, true, true, 12);
+    let browser_container = gtk::Box::new(gtk::Orientation::Horizontal, 8);
+    browser_container.pack_start(&webview, true, true, 8);
     browser_container
         .style_context()
         .add_provider(&css_provider, gtk::STYLE_PROVIDER_PRIORITY_APPLICATION);
@@ -62,29 +62,37 @@ fn main() {
     window_control_container.pack_start(&maximize_button, false, false, 0);
     window_control_container.pack_start(&minimize_button, false, false, 0);
 
-    let label_container = gtk::Box::new(gtk::Orientation::Horizontal, 0);
-    let label = gtk::Label::new(Some("Lioncat"));
-    label_container.pack_start(&label, false, false, 0);
+    let searchbar = gtk::Entry::new();
+    searchbar.set_size_request(50, 5);
+    let titlebar_container = gtk::Box::new(gtk::Orientation::Horizontal, 0);
+    titlebar_container.pack_start(&window_control_container, false, false, 0);
+    titlebar_container.pack_end(&searchbar, false, false, 5);
+    titlebar_container
+        .style_context()
+        .add_provider(&css_provider, gtk::STYLE_PROVIDER_PRIORITY_APPLICATION);
+    titlebar_container.set_widget_name("titlebar");
 
     let navigator_container = gtk::Box::new(gtk::Orientation::Vertical, 0);
-
-    navigator_container.set_size_request(250, 720);
+    navigator_container.set_size_request(240, 720);
     navigator_container
         .style_context()
         .add_provider(&css_provider, gtk::STYLE_PROVIDER_PRIORITY_APPLICATION);
 
     navigator_container.set_widget_name("navbar");
 
-    navigator_container.pack_start(&window_control_container, false, false, 0);
-    navigator_container.pack_start(&label_container, false, false, 0);
+    let global_container = gtk::Box::new(gtk::Orientation::Vertical, 0);
 
-    let global_container = gtk::Box::new(gtk::Orientation::Horizontal, 0);
-    global_container.pack_start(&navigator_container, false, false, 0);
-    global_container.pack_start(&browser_container, true, true, 0);
-    global_container
+    let view_container = gtk::Box::new(gtk::Orientation::Horizontal, 0);
+    view_container.pack_start(&navigator_container, false, false, 0);
+    view_container.pack_start(&browser_container, true, true, 0);
+    view_container
         .style_context()
         .add_provider(&css_provider, gtk::STYLE_PROVIDER_PRIORITY_APPLICATION);
-    global_container.set_widget_name("global_container");
+    view_container.set_widget_name("view_container");
+
+    global_container.pack_start(&titlebar_container, false, false, 0);
+    global_container.pack_start(&view_container, false, false, 0);
+
     window.add(&global_container);
 
     let settings = WebViewExt::settings(&webview).unwrap();

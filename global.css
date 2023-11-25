@@ -1,15 +1,18 @@
-#global_container{
-    background-color: rgb(255, 159, 159);
+#view_container{
+    background-color: rgb(253, 243, 223);
+}
+
+#titlebar{
+    background-color: rgb(253, 243, 223);
 }
 
 #navbar{
-    background-color: rgb(255, 159, 159);
+    background-color: rgb(253, 243, 223);
 }
 #browser_container{
     margin: 8px;
     background-color: white;
     border-radius: 12px;
-
 }
 #close_btn,#maximize_btn,#minimize_btn {  
     background-image: none; 
@@ -25,5 +28,5 @@
     background-color: yellow;
 } 
 #minimize_btn {
-    background-color: rgb(4, 194, 4);
+    background-color: rgb(194, 4, 169);
 }
