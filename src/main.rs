@@ -1,3 +1,6 @@
+mod components;
+mod application;
+
 use gtk::{prelude::*, Button, CssProvider, Window, WindowType};
 use webkit2gtk::{SettingsExt, WebContext, WebView, WebViewExt};
 
