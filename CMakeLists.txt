@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.10)
 
 project(fusion_browser CXX)
 
+set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+
 # Find GTK
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GTK3 REQUIRED gtk+-3.0)

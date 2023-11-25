@@ -9,7 +9,7 @@ public:
         set_decorated(false);
 
         Glib::RefPtr<Gtk::CssProvider> cssProvider = Gtk::CssProvider::create();
-        cssProvider->load_from_path("global.css");
+        cssProvider->load_from_path("../global.css");
         auto webView =  WEBKIT_WEB_VIEW( webkit_web_view_new() );
         auto view = Glib::wrap( GTK_WIDGET( webView ) );
         webkit_web_view_load_uri(webView,"https://www.google.com/");
