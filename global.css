@@ -6,6 +6,14 @@
     background-color: rgb(253, 243, 223);
 }
 
+#search_bar{
+    background-color: rgb(253, 243, 223);
+}
+
+#window_control{
+    padding: 8px;
+}
+
 #navbar{
     background-color: rgb(253, 243, 223);
 }
